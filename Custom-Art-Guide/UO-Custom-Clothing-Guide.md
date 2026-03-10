@@ -15,26 +15,59 @@ Every wearable item in UO has up to 3 distinct visual representations. Understan
 |----------------|-----------------|-----------|------------|
 | **Ground/Backpack Icon** | Item on the ground, in bags, on vendor | YES | .bmp (44x44 area, isometric) |
 | **Paperdoll Image** | Character screen (Equipment screen) | YES | .bmp (~60x90px region) |
-| **On-Character Sprite** | Character wearing it in the world (walking, fighting, etc.) | Optional* | .bmp frames -> animation pipeline |
-
-> **Critical insight from field research:** For most clothing items, you do NOT need to create custom on-character sprites. UO uses a layer system - the character body already has built-in animations for each clothing layer. You declare which layer your item uses, and UO renders the body animation automatically. The item looks unique in the paperdoll and on the ground. This is how most UO shards (including Outlands) handle custom clothing.
->
-> **Only if** you want the item to look visually different on the character during movement do you need the full animation pipeline.
+| **On-Character Sprite** | Character wearing it in the world (walking, fighting, etc.) | **Yes, if visually distinct** | .bmp frames → animation pipeline |
 
 ---
 
-## Minimum Viable Art Per Item
+## Do You Need Custom On-Character Sprites?
 
-For standard clothing with no custom on-character appearance:
+This is the most important decision before you start.
 
+### Option A - Reuse an Existing Animation (NO custom sprites)
+The character wears the item and it looks like whatever base UO animation you assign it to. The paperdoll and ground icon are unique, but **the character in motion looks like a standard robe, shirt, etc.**
+
+Use this when: the silhouette is close enough to an existing garment type.
+
+### Option B - Custom Sprites Required (YES, your case)
+**If you want the clothing to look visually different on the character in the world - different silhouette, open front, unique shape - you MUST create custom sprites.**
+
+Example: A standard Robe in UO has a closed-front silhouette. If you create an **Open Robe** with the front cut away, the character needs unique BMP frames for all 5 walking directions so players actually see the open front while moving. Assigning it to the existing Robe animation would just make it look like a standard robe in motion.
+
+**This applies any time you want:**
+- A different silhouette than any base garment
+- Cut-aways, openings, unique draping
+- Layered looks that don't exist in base UO
+- Asymmetric designs visible during movement
+
+Custom sprites are more work, but they're what makes your items look genuinely different in the world.
+
+---
+
+## Art Requirements by Approach
+
+### Minimum (reusing existing animation):
 ```
 3 files per item:
-  1. paperdoll.bmp     - appears in character equipment screen
-  2. groundicon.bmp    - appears on ground and in backpack
-  3. MyClothingItem.cs - C# script (defines layer, name, stats)
+  1. paperdoll.bmp     - character equipment screen
+  2. groundicon.bmp    - on ground and in backpack
+  3. MyClothingItem.cs - C# script (layer, name, stats)
 ```
 
-**30 items = 90 files total.**
+### Full custom on-character appearance:
+```
+Per item:
+  1. paperdoll.bmp
+  2. groundicon.bmp
+  3. [AnimName]/Walk/Down/    - walkdown_1.bmp through walkdown_N.bmp  (max 10)
+  3. [AnimName]/Walk/DownLeft/
+  3. [AnimName]/Walk/Left/
+  3. [AnimName]/Walk/UpLeft/
+  3. [AnimName]/Walk/Up/
+  (repeat folder structure for Idle, Attack, and any other animation types)
+  4. MyClothingItem.cs
+```
+
+UO mirrors left-facing directions to create right-facing. You only draw 5 of the 8 directions.
 
 ---
 
@@ -124,7 +157,9 @@ This is what tells UO how to treat the item - that it's wearable, what animation
 
 ## Part 4: On-Character Appearance (Animation Layer)
 
-### Option A: Use an Existing Animation (Recommended - No Extra Art Needed)
+> **For visually distinct clothing (open robe, unique silhouette, etc.) skip to Option C.** Options A and B reuse existing UO animations - the character will look like a standard garment type while moving. Only Option C gives you a genuinely different look on the character in the world.
+
+### Option A: Use an Existing Animation (No Extra Art - Character Looks Like Base UO Garment)
 
 This is the standard approach. You tell UO to use an existing clothing animation from the base game.
 
@@ -174,9 +209,17 @@ If the existing animation type fits but you want to assign it to a new slot:
 
 ---
 
-### Option C: Fully Custom On-Character Sprites
+### Option C: Fully Custom On-Character Sprites (Required for Visually Distinct Clothing)
 
-**Only needed if you want unique character movement animations for this clothing item.**
+**Use this when you want the clothing to look different on the character in the world - different silhouette, open front, unique draping, asymmetric design, anything that doesn't match an existing UO garment shape.**
+
+Example workflow for an Open Robe:
+- Draw 5-direction BMP frames of the character wearing the open robe (the open front visible)
+- Each direction: Down, Down-Left, Left, Up-Left, Up
+- For each direction: Walk frames, Idle frames, and optionally Attack/other animation frames
+- UO automatically mirrors these to create the right-facing directions
+
+
 
 This is the expensive path. Each clothing direction requires individual BMP frames. Here is the full pipeline:
 
