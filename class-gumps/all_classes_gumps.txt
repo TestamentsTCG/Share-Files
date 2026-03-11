@@ -1,0 +1,49 @@
+# Perilous Legends — All Class Gumps
+# Format: <gump_id> <path>
+# Run: python inject_gump.py --batch all_classes_gumps.txt
+# Must run as Administrator
+
+# Elementalist
+42148 elementalist_bg_fixed.png
+42149 elementalist_btn_normal_fixed.png
+42150 elementalist_btn_pressed_fixed.png
+
+# Necromancer
+42391 necromancer_bg_fixed.png
+42392 necromancer_btn_normal_fixed.png
+42393 necromancer_btn_pressed_fixed.png
+
+# Pirate
+42396 pirate_bg_fixed.png
+42397 pirate_btn_normal_fixed.png
+42398 pirate_btn_pressed_fixed.png
+
+# Biologist
+42401 biologist_bg_fixed.png
+42402 biologist_btn_normal_fixed.png
+42403 biologist_btn_pressed_fixed.png
+
+# Ranger
+42300 ranger_bg_fixed.png
+42301 ranger_btn_normal_fixed.png
+42302 ranger_btn_pressed_fixed.png
+
+# Assassin (+10px pad)
+42303 assassin_bg_fixed.png
+42304 assassin_btn_normal_fixed.png
+42305 assassin_btn_pressed_fixed.png
+
+# Gladiator
+42306 gladiator_bg_fixed.png
+42307 gladiator_btn_normal_fixed.png
+42308 gladiator_btn_pressed_fixed.png
+
+# Bard (+10px pad)
+42309 bard_bg_fixed.png
+42310 bard_btn_normal_fixed.png
+42311 bard_btn_pressed_fixed.png
+
+# Cutpurse (+10px pad)
+42312 cutpurse_bg_fixed.png
+42313 cutpurse_btn_normal_fixed.png
+42314 cutpurse_btn_pressed_fixed.png
