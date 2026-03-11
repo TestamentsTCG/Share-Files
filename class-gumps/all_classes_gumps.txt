@@ -1,52 +1,49 @@
-# Perilous Legends - All Class Gumps
+# Perilous Legends — All Class Gumps
 # Format: <gump_id> <path>
-# IDs start at 69986 (first free ID after vanilla max 69985)
+# Run: python inject_gump.py --batch all_classes_gumps.txt
+# Must run as Administrator
 
 # Elementalist
-69986 elementalist_bg_fixed.png
-69987 elementalist_btn_normal_fixed.png
-69988 elementalist_btn_pressed_fixed.png
+42148 elementalist_bg_fixed.png
+42149 elementalist_btn_normal_fixed.png
+42150 elementalist_btn_pressed_fixed.png
 
 # Necromancer
-69989 necromancer_bg_fixed.png
-69990 necromancer_btn_normal_fixed.png
-69991 necromancer_btn_pressed_fixed.png
+42391 necromancer_bg_fixed.png
+42392 necromancer_btn_normal_fixed.png
+42393 necromancer_btn_pressed_fixed.png
 
 # Pirate
-69992 pirate_bg_fixed.png
-69993 pirate_btn_normal_fixed.png
-69994 pirate_btn_pressed_fixed.png
+42396 pirate_bg_fixed.png
+42397 pirate_btn_normal_fixed.png
+42398 pirate_btn_pressed_fixed.png
 
 # Biologist
-69995 biologist_bg_fixed.png
-69996 biologist_btn_normal_fixed.png
-69997 biologist_btn_pressed_fixed.png
+42401 biologist_bg_fixed.png
+42402 biologist_btn_normal_fixed.png
+42403 biologist_btn_pressed_fixed.png
 
 # Ranger
-69998 ranger_bg_fixed.png
-69999 ranger_btn_normal_fixed.png
-70000 ranger_btn_pressed_fixed.png
+42300 ranger_bg_fixed.png
+42301 ranger_btn_normal_fixed.png
+42302 ranger_btn_pressed_fixed.png
 
-# Assassin
-70001 assassin_bg_fixed.png
-70002 assassin_btn_normal_fixed.png
-70003 assassin_btn_pressed_fixed.png
+# Assassin (+10px pad)
+42303 assassin_bg_fixed.png
+42304 assassin_btn_normal_fixed.png
+42305 assassin_btn_pressed_fixed.png
 
 # Gladiator
-70004 gladiator_bg_fixed.png
-70005 gladiator_btn_normal_fixed.png
-70006 gladiator_btn_pressed_fixed.png
+42306 gladiator_bg_fixed.png
+42307 gladiator_btn_normal_fixed.png
+42308 gladiator_btn_pressed_fixed.png
 
-# Bard
-70007 bard_bg_fixed.png
-70008 bard_btn_normal_fixed.png
-70009 bard_btn_pressed_fixed.png
+# Bard (+10px pad)
+42309 bard_bg_fixed.png
+42310 bard_btn_normal_fixed.png
+42311 bard_btn_pressed_fixed.png
 
-# Cutpurse
-70010 cutpurse_bg_fixed.png
-70011 cutpurse_btn_normal_fixed.png
-70012 cutpurse_btn_pressed_fixed.png
-
-# Ashwalker's Shroud paperdoll
-70013 ashwalker_male.png
-70014 ashwalker_female.png
+# Cutpurse (+10px pad)
+42312 cutpurse_bg_fixed.png
+42313 cutpurse_btn_normal_fixed.png
+42314 cutpurse_btn_pressed_fixed.png
