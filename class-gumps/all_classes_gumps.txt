@@ -49,6 +49,7 @@
 42314 cutpurse_btn_pressed_fixed.png
 
 # Ashwalker's Shroud (Cutpurse class robe)
-# Male gump slot: 42415 | Female gump slot: 42416
-42415 ashwalker_male.png
-42416 ashwalker_female.png
+# BodyValue: 1025 | Male gump slot: 51025 | Female gump slot: 61025
+51025 ashwalker_male.png
+61025 ashwalker_female.png
+
